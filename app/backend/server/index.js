@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path')
-const db = require('../db/index.js');
+const db = require('../database/index.js');
 const app = express();
-
+const controllers = require('../database/controllers.js')
 
 app.get('/login', (req, res) => {
   db.query(`SELECT * FROM users`, (err, result) => {
