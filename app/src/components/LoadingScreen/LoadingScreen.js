@@ -1,9 +1,10 @@
+import '../../index.css'
 import React from 'react'
 
 const LoadingScreen = () => {
   return (
     <div>
-      <img src="./loadingimage.svg" alt="Mastermind loading"/>
+      <img className="centered" src="./loadingimage.svg" alt="Mastermind loading"/>
     </div>
   )
 }
