@@ -126,6 +126,7 @@ v2:
 
 v3:
 - [ ] Add multiplayer
+- [ ] Mobile functionality
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
