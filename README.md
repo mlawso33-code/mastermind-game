@@ -19,7 +19,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/mlawso33-code/mastermind-game">
-    <img src="app/public/readmetitle.svg" alt="Logo" width="80" height="80">
+    <img src="app/public/readmetitle.svg" alt="Logo" width="auto" height="auto">
   </a>
 
 <!-- TABLE OF CONTENTS -->
