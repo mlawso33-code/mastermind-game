@@ -1,20 +1,20 @@
 // get the client
+
 const mysql = require('mysql2');
-require('dotenv').config();
 
 // create the connection to database
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "mlawso33",
-  password: "password",
-  database: process.env.DATABASE,
-  //port: process.env.PORT
+  host: '127.0.0.1',
+  user: process.env.REACT_APP_DATABASE_USER,
+  password: process.env.REACT_APP_DATABASE_PASSWORD,
+  database: process.env.REACT_APP_DATABASE_CURRENT_DB,
+  port: process.env.REACT_APP_DATABASE_PORT
 });
 
 db.connect((err, result) => {
   console.log('Database connection good!');
   if (err) {
-    throw err;
+    console.log(err);
   }
 });
 
