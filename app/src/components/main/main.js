@@ -12,20 +12,17 @@ const Main = () => {
   const [showPlay, setPlay] = useState(true);
   const [showFirst, setFirstTime] = useState(false);
   const [wrong, setWrong] = useState(false);
-  //const [showFeedBack, setFeedBack] = useState(false);
-  const [winner, setWinner] = useState(false)
-  const [restart, setRestart] = useState(false)
+  const [showFeedBack, setFeedBack] = useState(false);
+  const [winner, setWinner] = useState(false);
+  const [restart, setRestart] = useState(false);
   const [attempts, setAttempts] = useState(0);
   const [correctNums, setCorrectNums] = useState(0);
   const [correctMatches, setCorrectMatches] = useState(0);
   const [history, setHistory] = useState([]);
 
-  const listHistory = history.map((item) => (
-    <li key={item.toString()}>{item}</li>
-  ));
-
   function playClicked() {
     setPlay(!showPlay);
+    handleFeedBack();
   }
   function firstClicked() {
     setFirstTime(!showFirst);
@@ -46,14 +43,14 @@ const Main = () => {
     setWrong(!wrong);
     setTimeout(() => setWrong(!wrong), 2000);
   }
-  // function handleFeedBack() {
-  //   setFeedBack(!showFeedBack);
-  // }
+  function handleFeedBack() {
+    setFeedBack(!showFeedBack);
+  }
   function handleWinner() {
     setWinner(!winner);
     handleRestart();
   }
-  function handleRestart(){
+  function handleRestart() {
     setRestart(!restart);
   }
 
@@ -79,33 +76,22 @@ const Main = () => {
               winner={handleWinner}
             />
           )}
-          <p>Attempts: <span style={{color:"red", fontSize:"large", fontWeight:"bolder"}}>{attempts}</span></p>
-          {/* {showFeedBack ? (
-            <Feedback
-            correctMatches={correctMatches}
-            correctNums={correctNums}
-            wrong={wrong}
-            click={handleFeedBack}
-            />
-          ) : null} */}
-          <Feedback
+          {showFeedBack ? (<Feedback
             correctMatches={correctMatches}
             correctNums={correctNums}
             wrong={wrong}
             winner={winner}
             attempts={attempts}
             restart={restart}
-          />
-          <br/>
-          <h3 style={{color:"green", textDecoration:"underline"}}>Your Guess History</h3>
-          {history.length > 0 ? <ul style={{color: "#0077b5"}}>{listHistory}</ul> : null}
+            history={history}
+          />) : null}
           <br />
           <FirstTimeButton id="firstTimeButton" clickFirst={firstClicked} />
           {showFirst ? <FirstTime clickGotIt={handleFirstTime} /> : null}
         </div>
       ) : (
         <LoadingScreen />
-        )}
+      )}
     </>
   );
 };

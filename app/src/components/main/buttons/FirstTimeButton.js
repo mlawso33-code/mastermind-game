@@ -1,9 +1,10 @@
+import '../../../index.css'
 import React from 'react';
 
 const FirstTimeButton= ({clickFirst}) => {
   return (
     <div>
-      <img id="firstbutton" src="./firsttime.svg" alt="First time" onClick={() => clickFirst()}/>
+      <img className="firstbutton" src="./firsttime.svg" alt="First time" onClick={() => clickFirst()}/>
     </div>
   )
 }

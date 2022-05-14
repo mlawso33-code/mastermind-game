@@ -3,10 +3,10 @@ import React from 'react'
 const FirstTime = ({clickGotIt}) => {
   return (
     <div>
-      <h2>How to beat the Master Mind</h2>
+      <h2 style={{color:"#0077b5", fontWeight:"bold", textDecoration:"underline"}}>How to beat the Master Mind</h2>
       <h3>Victory Conditions:</h3>
       <ul>
-        <li>Guess ALL the combination of numbers in the current mind</li>
+        <li>Guess the combination of numbers in the current mind</li>
       </ul>
       <h3>Rules:</h3>
       <ul>
