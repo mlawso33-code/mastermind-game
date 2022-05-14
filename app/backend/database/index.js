@@ -2,11 +2,6 @@
 
 const mysql = require('mysql2');
 
-const user = process.env.REACT_APP_DATABASE_USER
-
-console.log(user);
-
-
 // create the connection to database
 const db = mysql.createConnection({
   host: '127.0.0.1',

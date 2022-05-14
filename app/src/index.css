@@ -14,8 +14,8 @@ code {
     monospace;
 }
 
-
-h1 {
-  color: greenyellow;
-  align-self: center;
+.guessInputs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
