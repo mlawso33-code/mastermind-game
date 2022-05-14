@@ -21,6 +21,7 @@
   <a href="https://github.com/mlawso33-code/mastermind-game">
     <img src="app/public/readmetitle.svg" alt="Logo" width="auto" height="auto">
   </a>
+  </div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -50,8 +51,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![mastermind][product-screenshot]](https://example.com)
+<div align="center">
+  <a href="https://github.com/mlawso33-code/mastermind-game">
+    <img src="app/public/mastermind.svg" alt="Logo" width="auto" height="auto">
+  </a>
+  </div>
 
 This project was dedicated to a coding challenge I receieved. While creating this project, I realized the answer to boredom it could offer for people seeking a simple challenging game. I personally enjoy a good challenge, and who better to challenge than the computer! Test to see if you can beat the "Master Mind"!
 
