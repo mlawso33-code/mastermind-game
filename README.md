@@ -58,7 +58,7 @@
   </a>
   </div>
 
-This project was dedicated to a coding challenge I receieved. While creating this project, I realized the answer to boredom it could offer for people seeking a simple challenging game. I personally enjoy a good challenge, and who better to challenge than the computer! Test to see if you can beat the "Master Mind"!
+This project was dedicated to a coding challenge I receieved. While creating this project, I realized the answer to boredom it could offer. For people, like me, seeking a simple but challenging game. I personally enjoy a good challenge, and who better to challenge than the computer! Test to see if you can beat the "Master Mind"!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
