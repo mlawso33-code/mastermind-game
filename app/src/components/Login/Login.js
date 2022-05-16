@@ -1,11 +1,14 @@
 //import '.././App.css';
 import { useState } from "react";
+import {useNavigate} from "react-router-dom"
 import PropTypes from 'prop-types'
 //import axios from "axios";
 
 const Login = ({ setToken }) => {
   const [userLogin, setUser] = useState("");
   const [userPassword, setPassword] = useState("");
+
+  let navigate = useNavigate();
 
   async function loginUser(credentials) {
     return fetch("http://localhost:3001/login", {
@@ -17,6 +20,10 @@ const Login = ({ setToken }) => {
       },
       body: JSON.stringify(credentials),
     }).then((data) => data.json());
+  }
+
+  function handleSignUp(){
+    navigate("../registration", {replace: true});
   }
 
   // async function handleSubmitUser(e) {
@@ -64,9 +71,10 @@ const Login = ({ setToken }) => {
         </label>
         <br />
         <button id="submitButton" type="submit">
-          Submit
+          Sign In
         </button>
       </form>
+      <button onClick={()=> handleSignUp()}>Sign Up</button>
     </div>
   );
 };

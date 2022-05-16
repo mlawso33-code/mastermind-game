@@ -1,4 +1,5 @@
-import React from "react";
+import {useState} from "react";
+import Scores from './Scores.js'
 
 const Feedback = ({
   correctMatches,
@@ -10,15 +11,17 @@ const Feedback = ({
   restart,
   history,
 }) => {
+  const [scores, setScores] = useState([]);
   const listHistory = history.map((item) => (
     <li key={item.toString()}>{item}</li>
   ));
 
   function handleRestart() {
+    setScores(prevScores => [...prevScores, attempts])
     window.location.reload(true);
   }
   return (
-    <>
+    <section>
       {!winner ? (
         <div className="feedbackModal">
           <div className="feedbackmodalContent">
@@ -84,7 +87,8 @@ const Feedback = ({
       {history.length > 0 ? (
         <ul style={{ color: "#0077b5" }}>{listHistory}</ul>
       ) : null}
-    </>
+      <Scores scores={scores}/>
+    </section>
   );
 };
 

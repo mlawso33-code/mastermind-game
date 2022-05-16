@@ -6,6 +6,7 @@ import FirstTimeButton from "./buttons/FirstTimeButton.js";
 import FirstTime from "./FirstTime.js";
 import NumGenerator from "./NumGenerator.js";
 import Feedback from "./Feedback.js";
+import Scores from './Scores.js';
 
 const Main = () => {
   const [loading, setLoading] = useState(true);
@@ -41,7 +42,7 @@ const Main = () => {
   }
   function wrongGuesses() {
     setWrong(!wrong);
-    setTimeout(() => setWrong(!wrong), 2000);
+    setTimeout(() => setWrong(!wrong), 3000);
   }
   function handleFeedBack() {
     setFeedBack(!showFeedBack);
@@ -62,8 +63,8 @@ const Main = () => {
     <>
       {!loading ? (
         <div>
-          <h1>Master Mind</h1>
-          {showPlay ? (
+          <h1>Master <img style={{maxHeight:"3em", maxWidth:"3em"}}src="./mastermind.svg" alt="Master Mind logo"/> Mind</h1>
+          {showPlay && !showFirst ? (
             <PlayButton clickPlay={playClicked} />
           ) : (
             <NumGenerator
@@ -76,7 +77,8 @@ const Main = () => {
               winner={handleWinner}
             />
           )}
-          {showFeedBack ? (<Feedback
+          {showFeedBack ? (
+          <Feedback
             correctMatches={correctMatches}
             correctNums={correctNums}
             wrong={wrong}
@@ -84,9 +86,9 @@ const Main = () => {
             attempts={attempts}
             restart={restart}
             history={history}
-          />) : null}
+          /> )  : null}
           <br />
-          <FirstTimeButton id="firstTimeButton" clickFirst={firstClicked} />
+          {!showFeedBack ? (<FirstTimeButton id="firstTimeButton" clickFirst={firstClicked} />) : null }
           {showFirst ? <FirstTime clickGotIt={handleFirstTime} /> : null}
         </div>
       ) : (
