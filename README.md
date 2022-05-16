@@ -122,6 +122,7 @@ v2:
 - [ ] Add difficulties
 - [ ] Add login authentication
 - [ ] Add profile set up
+- [ ] Add achievements
 - [ ] Make it look cooler!
 
 v3:
