@@ -12,12 +12,19 @@ const NumGenerator = ({
   history,
   //feedback,
   winner,
+  restartNums,
 }) => {
   const [randomNums, setRandomNums] = useState([]);
   const [userNumGuess1, setNumGuess1] = useState(0);
   const [userNumGuess2, setNumGuess2] = useState(0);
   const [userNumGuess3, setNumGuess3] = useState(0);
   const [userNumGuess4, setNumGuess4] = useState(0);
+  // const [userGuess, setUserGuess] = useState({
+  //   '0':0,
+  //   '1':0,
+  //   '2':0,
+  //   '3':0
+  // })
 
   function fetchNums() {
     axios
@@ -33,7 +40,7 @@ const NumGenerator = ({
         },
         id: 1,
       })
-      .then((res) => setRandomNums(res.data.result.random.data));
+      .then((res) => setRandomNums(res.data.result.random.data)).then(restartNums = false);
   }
 
   function checkNums() {
@@ -80,7 +87,7 @@ const NumGenerator = ({
 
   useEffect(() => {
     fetchNums();
-  }, []);
+  }, [restartNums]);
 
   return (
     <div>

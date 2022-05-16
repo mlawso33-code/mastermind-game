@@ -10,6 +10,9 @@ const Feedback = ({
   attempts,
   restart,
   history,
+  resetAttempt,
+  resetHist,
+  resetNums
 }) => {
   const [scores, setScores] = useState([]);
   const listHistory = history.map((item) => (
@@ -17,8 +20,23 @@ const Feedback = ({
   ));
 
   function handleRestart() {
-    setScores(prevScores => [...prevScores, attempts])
-    window.location.reload(true);
+    setScores(prevScores => [...prevScores, attempts]);
+    resetHistory();
+    resetAttempts();
+    resetMasterMind();
+    //window.location.reload(true);
+  }
+  function resetMasterMind(){
+    //change mastermind nums and user guess from num generator
+    resetNums(true).then(!restart)
+  }
+
+
+  function resetAttempts(){
+    resetAttempt(0)
+  }
+  function resetHistory(){
+    resetHist([])
   }
   return (
     <section>

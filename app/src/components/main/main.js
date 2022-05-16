@@ -16,10 +16,12 @@ const Main = () => {
   const [showFeedBack, setFeedBack] = useState(false);
   const [winner, setWinner] = useState(false);
   const [restart, setRestart] = useState(false);
+  const [restartNums, setRestartNums] = useState(false);
   const [attempts, setAttempts] = useState(0);
   const [correctNums, setCorrectNums] = useState(0);
   const [correctMatches, setCorrectMatches] = useState(0);
   const [history, setHistory] = useState([]);
+
 
   function playClicked() {
     setPlay(!showPlay);
@@ -75,6 +77,7 @@ const Main = () => {
               history={setHistory}
               //feedback={handleFeedBack}
               winner={handleWinner}
+              restartNums={restartNums}
             />
           )}
           {showFeedBack ? (
@@ -86,6 +89,9 @@ const Main = () => {
             attempts={attempts}
             restart={restart}
             history={history}
+            resetAttempt={setAttempts}
+            resetHist={setHistory}
+            resetNums={setRestartNums}
           /> )  : null}
           <br />
           {!showFeedBack ? (<FirstTimeButton id="firstTimeButton" clickFirst={firstClicked} />) : null }
