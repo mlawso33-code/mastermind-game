@@ -26,6 +26,10 @@ const NumGenerator = ({
   //   '3':0
   // })
 
+  //metric::
+  //# of success ratio v. collect # of calls
+  //error if no res
+
   function fetchNums() {
     axios
       .post("https://api.random.org/json-rpc/4/invoke", {
@@ -40,10 +44,26 @@ const NumGenerator = ({
         },
         id: 1,
       })
-      .then((res) => setRandomNums(res.data.result.random.data)).then(restartNums = false);
+      .then((res) => setRandomNums(res.data.result.random.data));
+      if(randomNums.length > 0){
+        emitMetric(randomNums.length > 0, "random nums")
+      }
+  }
+  function emitMetric(value, name){
+    // const login = {
+    //   succeed: 0,
+    //   fail: 1
+    // }
+    // if(e.length > 0) {
+    //   console.log(login.succeed)
+    // } else{
+    //   console.log(login.fail)
+    // }
+    console.log(`${name} :::: ${value}`)
   }
 
   function checkNums() {
+    console.log('clicked')
     const playerGuess = [
       Number(userNumGuess1),
       Number(userNumGuess2),
