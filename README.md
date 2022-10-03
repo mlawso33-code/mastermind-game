@@ -107,11 +107,21 @@ v16.14.2
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Demo coming soon!
+<p>Sign up</p>
+
+<img src=https://user-images.githubusercontent.com/78750607/193645244-b73bb348-7b58-4212-809d-6addcd4a441f.gif />
+
+<p>Main</p>
+<img src=https://user-images.githubusercontent.com/78750607/193647784-1849fdcc-8d93-480d-bc18-928ea298d133.gif />
+
+
+<p>Main 2</p>
+<img src=https://user-images.githubusercontent.com/78750607/193647766-862fc12b-1aa8-4a86-893d-4c8bf438a833.gif />
 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 
